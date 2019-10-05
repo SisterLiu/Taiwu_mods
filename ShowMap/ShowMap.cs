@@ -31,17 +31,17 @@ namespace ShowMap
                 return;
             }
             DateFile tbl = DateFile.instance;
-            if (tbl == null || tbl.actorsDate == null || !tbl.actorsDate.ContainsKey(tbl.mianActorId))
-            {
-                GUILayout.Label("存档未载入!");
-            }
-            else
-            {
+            //if (tbl == null || tbl.allMainActors == null || !tbl.allMainActors.ContainsKey(tbl.MianActorID()))
+            //{
+            //    GUILayout.Label("存档未载入!");
+            //}
+            //else
+            //{
                 if (GUILayout.Button("显示未探索区域"))
                 {
                     ShowAllMap();
                 }
-            }
+            //}
         }
 
         public static void ShowAllMap()
