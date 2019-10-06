@@ -233,11 +233,17 @@ namespace GongFaBook
                     // 未练出心法效果或心法冲解则两种心法效果都显示
                     if (gongFaFLevel < 5 || gongFaFTyp == 2)
                     {
-                        str.Append(DateFile.instance.SetColoer(20004, $"  如果正练\n"))
+                        var gongFaTreeWindow = UIManager.Instance.GetUI("GongFaTreeWindow");
+                        var isInGongFaTree = gongFaTreeWindow != null && gongFaTreeWindow.gameObject.activeInHierarchy;
+                        if (!isInGongFaTree)
+                        {
+                            str.Append(DateFile.instance.SetColoer(20004, $"  如果正练\n"))
                             .Append(__instance.SetMassageTitle(8007, 3, 11, 20010))
                             .Append(__instance.Dit())
                             .Append(DateFile.instance.SetColoer(20002, $"{DateFile.instance.gongFaFPowerDate[gongFaFEffect][99]}{((DateFile.instance.gongFaFPowerDate[gongFaFEffect][98] == "") ? "" : DateFile.instance.massageDate[5001][4])}{DateFile.instance.gongFaFPowerDate[gongFaFEffect][98]}{DateFile.instance.massageDate[5001][5]}"))
                             .Append("\n\n");
+                        }
+
                         str.Append(DateFile.instance.SetColoer(20004, $"  如果逆练\n"))
                             .Append(__instance.SetMassageTitle(8007, 3, 12, 20005))
                             .Append(__instance.Dit())
