@@ -1,0 +1,8 @@
+﻿{
+  "Id": "SLstudy",
+  "DisplayName": "突破中悔棋/初始化所有格子",
+  "Author": "",
+  "Version": "1.0.2",
+  "AssemblyName": "SLstudy.dll",
+  "EntryMethod": "SLstudy.Main.Load"
+}

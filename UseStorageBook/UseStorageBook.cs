@@ -75,7 +75,7 @@ namespace Sth4nothing.UseStorageBook
             {
                 return false;
             }
-            int itemId = int.Parse(df.itemsDate[id][999]);
+            int itemId = int.Parse(GameData.Items.GetItemProperty(id, 999));
             int gongfaId = int.Parse(df.presetitemDate[itemId][32]);
             // 品级
             int pinji = int.Parse(df.presetitemDate[itemId][8]) - 1;
