@@ -63,11 +63,11 @@ namespace AllWin
     /// <summary>
     ///   // , new Type[] { typeof(bool), typeof(int) }
     /// </summary>
-    [HarmonyPatch(typeof(BattleSystem), "BattleEnd")]
+    [HarmonyPatch(typeof(BattleEndWindow), "BattleEnd")]
     public static class The_Patch
     {
 
-        static void Prefix(ref bool actorWin)
+        static void Prefix(ref bool actorWin, ref int actorRun)
         {
             if (!Main.enabled)
             {
@@ -75,6 +75,7 @@ namespace AllWin
             }
             Main.Logger.Log("you win, actual " + actorWin);
             actorWin = true;
+            actorRun = 0;
             return ;
         }
 
