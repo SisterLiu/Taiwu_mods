@@ -47,7 +47,7 @@ namespace Sth4nothing.UseStorageBook
                 .ToList();
             for (int i = 0; i < 3; i++)
             {
-                var x = int.Parse(df.GetActorDate(mainId, 308 + i, addValue: false));
+                var x = int.Parse(df.GetActorDate(mainId, 308 + i, applyBonus: false));
                 if (x > 0 && int.Parse(df.GetItemDate(x, 31, true)) == studySkillTyp)
                 items.Add(x);
             }
@@ -175,11 +175,11 @@ namespace Sth4nothing.UseStorageBook
             if (!Main.Enabled) return;
             var df = DateFile.instance;
             var bookId = BuildingWindow.instance.readBookId;
-            if (df.itemsDate.ContainsKey(bookId))
+            if (GameData.Items.GetItem(bookId) != null)
             {
                 if (df.actorItemsDate[-999].ContainsKey(bookId))
                 {
-                    var hp = int.Parse(df.itemsDate[bookId][901]);
+                    var hp = int.Parse(GameData.Items.GetItemProperty(bookId, 901));
                     if (hp <= 1)
                     {
                         df.actorItemsDate[-999].Remove(bookId);
