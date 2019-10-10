@@ -1,0 +1,8 @@
+{
+  "Id": "Customize",
+  "DisplayName": "自定义修改",
+  "Author": "LeaderOne",
+  "Version": "0.0.1",
+  "AssemblyName": "Customize.dll",
+  "EntryMethod": "Customize.Main.Load"
+}
