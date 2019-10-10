@@ -28,7 +28,7 @@ namespace SLstudy
             {
                 return;
             }
-            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Backspace))
+            if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.Z))
             {
                 if (Main.injuryList.Count > 0 && Main.mianqi.Count > 0)
                 {
@@ -54,7 +54,7 @@ namespace SLstudy
                 StudyWindow.instance.StartCoroutine((IEnumerator)Main.ShowStudyWindow.Invoke(StudyWindow.instance, new object[0]));
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.Backspace) && Main.studyDiskIdList.Count > 0 && Main.studyDiskOkList.Count > 0)
+            if (Input.GetKeyDown(KeyCode.Z) && Main.studyDiskIdList.Count > 0 && Main.studyDiskOkList.Count > 0)
             {
                 StudyWindow.instance.studyDiskId = Main.studyDiskIdList[Main.studyDiskIdList.Count - 1];
                 StudyWindow.instance.studyDiskOk = Main.studyDiskOkList[Main.studyDiskOkList.Count - 1];
